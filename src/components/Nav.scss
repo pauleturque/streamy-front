@@ -1,0 +1,91 @@
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: fixed;
+    width: 100%;
+    padding: 12px 4%;
+    font-size: 0.9rem;
+    color: #FFF;
+    background: linear-gradient(to bottom, rgba(74,74,74,0.6), rgba(0,0,0,0));
+    transition: background-color 0.3s ease-in-out;
+    a{
+        color: #FFF;
+        text-decoration: none;
+    }
+
+    .profile__pic{
+        height: 600%;
+    }
+
+    .nav__{
+        margin-right: 2%;
+    }
+    
+
+    &--black{
+        background-color: #000;
+    }
+
+    &__burger{
+        cursor:pointer;
+        color: #FFF;
+        margin-right: 1rem;
+        @media screen and (min-width: 768px) {
+            display: none;
+        }
+    }
+
+    &__logo{
+        max-width: 100px;
+}
+
+    &__links{
+        transition: background-color 0.3s ease-in-out;
+
+        .nav__link{
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+        @media screen and (max-width:767.98px) {
+            display: flex;
+            flex-direction: column;
+            visibility: hidden;
+            margin-left: -26px;
+            margin-bottom: 2%;
+            position: absolute;
+            margin-top: 10%;
+            .show & {
+                display: flex;
+                flex-direction: column;
+                visibility:visible;
+                width: 100%;
+                height: 100vh;
+                top: 60px;
+                background-color: #000;
+                position: absolute;
+
+            }
+            .nav__link{
+                font-size: 1.5rem;
+                padding: 8px 4%;
+            }
+        }
+    }
+
+    &__actions{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 1;
+        .nav__action{
+            margin-left: 10px;
+            @media screen and (min-width:768px) {
+                margin-left:20px;
+            }
+        }
+    }
+
+
+}
