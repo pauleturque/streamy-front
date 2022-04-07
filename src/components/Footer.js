@@ -1,15 +1,19 @@
 import React from "react";
 import "./Footer.scss";
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="container">
-        <div className="socials">
-          <a href="/" className="facebook">F</a>
-          <a href="/" className="instagram">I</a>
-          <a href="/" className="twitter">T</a>
-          <a href="/" className="youtube">Y</a>
+        <div className="footer_socials">
+          <a href="/" className="footer_social"><FacebookIcon /></a>
+          <a href="/" className="footer_social"><InstagramIcon /></a>
+          <a href="/" className="footer_social"><TwitterIcon /></a>
+          <a href="/" className="footer_social"><YouTubeIcon /></a>
         </div>
         <ul className="footer_links">
             <li className="footer_link">
@@ -23,7 +27,7 @@ function Footer() {
                 <a href="/">lien</a>
                 </li>
         </ul>
-        <div></div>
+        <div className="copyright">MyFlix - Tous droits réservés</div>
       </div>
     </footer>
   );
