@@ -1,26 +1,42 @@
 .row {
-  padding: 1rem 4%;
+  padding: 5rem 4%;
   color: #fff;
+  text-decoration: none;
+
   &__title {
     font-size: 1.7rem;
     padding: 0 0.5rem;
+  }
+  .back {
+    text-decoration: none;
+    color: #fff;
   }
   &__images {
     display: flex;
     align-items: center;
     overflow-x: visible;
     overflow-y: hidden;
-    width: 100%;
-    padding: 0.5rem 0;
+    width: 90%;
+    height: 80vh;
+    padding: 2rem 0;
     .row__image {
-      width: 300px;
-      padding: 0.5rem;
-      transition: transform 0.3s ease-in;
+      width: 40vh;
+      padding: 2rem;
+      transition: transform 0.7s ease-out;
       &:hover {
         cursor: pointer;
         transform: scale(1.1);
       }
     }
+  }
+  p {
+    padding: 2rem;
+    color: #fff;
+    font-size: large;
+  }
+
+  a {
+    text-decoration: none;
   }
   ::-webkit-scrollbar {
     -webkit-appearance: none;

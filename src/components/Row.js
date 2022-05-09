@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Row.scss";
 import { Link } from "react-router-dom";
+import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 
 function Row({ title, fetchUrl, isPoster }) {
   const [movies, setMovies] = useState([]);
@@ -19,21 +20,24 @@ function Row({ title, fetchUrl, isPoster }) {
     fetchData();
   }, [fetchUrl]);
 
-  console.log("fetch : " + fetchUrl);
-
   return (
     <div className="row">
+      <Link to="/" className="back">
+        <KeyboardBackspaceIcon fontSize="large" />
+      </Link>
       <h2 className="row__title">{title}</h2>
       <div className="row__images">
         {movies.map((movie) => [
           <div key={movie.id}>
             <Link to={`/video/${movie.id}`}>
               {isPoster ? (
-                <img
-                  src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-                  className="row__image"
-                  alt={movie?.title || movie?.original_title || movie?.name}
-                />
+                <div>
+                  <img
+                    src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+                    className="row__image"
+                    alt={movie?.title || movie?.original_title || movie?.name}
+                  />
+                </div>
               ) : (
                 <img
                   src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
@@ -42,6 +46,7 @@ function Row({ title, fetchUrl, isPoster }) {
                 />
               )}
             </Link>
+            <p>{movie.overview}</p>
           </div>,
         ])}
       </div>

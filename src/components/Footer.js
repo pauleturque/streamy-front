@@ -23,21 +23,7 @@ function Footer() {
             <YouTubeIcon />
           </a>
         </div>
-        {/* <ul className="footer_links">
-            <li className="footer_link">
-                <a href="/">lien</a>
-                <a href="/">lien</a>
-                <a href="/">lien</a>
-                <a href="/">lien</a>
-                <a href="/">lien</a>
-                <a href="/">lien</a>
-                <a href="/">lien</a>
-                <a href="/">lien</a>
-                </li>
-        </ul> */}
-        <div className="copyright">
-          MyFlix - Tous droits réservés - Projet à usage pédagogique
-        </div>
+        <div className="copyright">Streamy - Tous droits réservés</div>
       </div>
     </footer>
   );

@@ -1,18 +1,34 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import ReactPlayer from "react-player";
+import Requests from "../config/Requests";
+import axios from "axios";
+
 import "./Video.scss";
 
 function Video() {
-  let { id } = useParams();
+  const [movie, setMovie] = useState([]);
 
-  console.log(id);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const request = await axios.get(Requests.fetchHorrorMovies);
+        setMovie(request.data.results);
+      } catch (error) {
+        console.error(error.message);
+      }
+    };
+    fetchData();
+  }, []);
+
+  console.log(movie);
   return (
     <div className="video">
-      <iframe
-        src={`https://www.youtube.com/embed/${id}`}
-        title="video"
-        allowFullScreen
-      ></iframe>
+      <p>{movie.description}</p>
+      <ReactPlayer
+        url="https://www.youtube.com/watch?v=ijgSQvOyoJo"
+        controls
+        width={"100%"}
+      />
     </div>
   );
 }

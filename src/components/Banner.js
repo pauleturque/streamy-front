@@ -1,16 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import "./Banner.scss";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import InfoIcon from "@mui/icons-material/Info";
 import Requests from "../config/Requests";
 import axios from "axios";
 import QuickView from "./QuickView";
+import Auth from "../contexts/Auth";
 
 function Banner() {
   const [movie, setMovie] = useState([]);
   const [popUp, setPopUp] = useState(false);
+  const { isAuthenticated, setIsAuthenticated } = useContext(Auth);
   const handleClick = () => {
     popUp ? setPopUp(false) : setPopUp(true);
   };
@@ -37,31 +36,14 @@ function Banner() {
     backgroundPosition: "center center",
   };
 
-  console.log(popUp);
-
   return (
     <header className="banner" style={bannerStyle}>
       <div className="banner_content">
-        <h1 className="banner_title">
-          {movie?.title || movie?.original_title || movie?.name}
-        </h1>
-        <p className="banner_description">{movie?.overview}</p>
-        <div className="banner_buttons">
-          <Link to={`/video/${movie?.id}`}>
-            <button className="banner_button banner_button--play">
-              <PlayArrowIcon />
-              Lecture
-            </button>
-          </Link>
-          <button
-            className="banner_button banner_button--info"
-            onClick={handleClick}
-          >
-            <InfoIcon />
-            Plus d'infos
-          </button>
-        </div>
+        <p className="banner_description">
+          Naviguez parmi les films les plus demandés et faites votre choix !
+        </p>
       </div>
+
       <QuickView
         bannerStyle={bannerStyle}
         movie={movie}

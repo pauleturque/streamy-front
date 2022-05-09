@@ -2,50 +2,64 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-end;
   height: 50vh;
-  font-size: 0.9rem;
+  //font-size: 0.7rem;
   padding-bottom: 3rem;
   color: #fff;
-  background-color: rgb(74, 74, 74);
+  background-color: rgb(29, 71, 186);
   @media screen and (min-width: 768px) {
     font-size: 1.2rem;
     height: 80vh;
     padding-bottom: 7rem;
   }
+  a {
+    text-decoration: none;
+  }
   &_content {
-    width: 60vw;
-    padding: 8vh 4% 0 4%;
+    width: 10rem;
+    padding: 2vh 4% 0rem 4%;
+    display: flex;
+    justify-content: left;
+
     @media screen and (min-width: 768px) {
-        padding-top: 40vh;
-      }
-    .banner_title {
+      display: flex;
       font-size: 1.5rem;
     }
-    .banner_buttons {
-      display: flex;
-      .banner_button {
-        display: flex;
-        align-items: center;
-        padding: 0.4rem 1rem 0.4rem 0.5rem;
-        margin-right: 0.7rem;
-        color: inherit;
-        font-weight: 600;
-        background: rgba(110, 110, 110, 0.7);
-        border-radius: 5px;
-        cursor: pointer;
-        @media screen and (min-width: 768px) {
-          font-size: 1.4rem;
-          padding: 0.8rem 1.5rem;
-        }
-        &--play {
-            color: #000;
-          background-color: rgba(255, 255, 255, 0.7);
-        }
-        svg{
-            margin-right: .4rem;
-        }
-      }
+    // .banner_title {
+    //   font-size: 2.5rem;
+    //   margin-left: 30vh;
+    // }
+    // .banner_buttons {
+    //   display: flex;
+    //   //margin-left: 80vh;
+    //   margin-top: 30vh;
+    //   //align-items: flex-end;
+    //   .banner_button {
+    //     display: flex;
+    //     align-items: flex-end;
+    //     padding: 1.8rem 2rem 0.8rem 0.5rem;
+    //     margin-right: 0.7rem;
+    //     color: inherit;
+    //     font-weight: 600;
+    //     background: #fff;
+    //     border-radius: 5px;
+    //     cursor: pointer;
+    //     @media screen and (min-width: 768px) {
+    //       font-size: 1.4rem;
+    //       padding: 0.8rem 1.5rem;
+    //     }
+    //     &--play {
+    //       color: #000;
+    //       background-color: rgba(255, 255, 255, 0.7);
+    //     }
+    //     svg {
+    //       margin-right: 0.4rem;
+    //     }
+    //   }
+    // }
+    .banner_description {
+      font-size: 1.5rem;
     }
   }
   &::after {
@@ -55,12 +69,6 @@
     height: 3rem;
     position: absolute;
     bottom: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(31, 31, 31, 0),
-      rgba(31, 31, 31, 0.5),
-      #111
-    );
     @media screen and (min-width: 768px) {
       height: 7rem;
     }
